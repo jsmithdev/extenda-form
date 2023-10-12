@@ -1,0 +1,14 @@
+{
+	"jsmithdev/extenda-picklist": {
+		"author": "jsmithdev",
+		"repo": "extenda-picklist",
+		"commit": "https://api.github.com/repos/jsmithdev/extenda-picklist/git/commits/35b4891ba5f92a064df7aad96e088367cbcfba58",
+		"mod": "2023-10-12T08:07:04.584Z"
+	},
+	"jsmithdev/extenda-element": {
+		"author": "jsmithdev",
+		"repo": "extenda-element",
+		"commit": "https://api.github.com/repos/jsmithdev/extenda-element/git/commits/1dd3bc50c571a91003128808a2852ab0ca11707b",
+		"mod": "2023-10-12T08:08:29.157Z"
+	}
+}

@@ -1,0 +1,62 @@
+<template>
+
+    <div class="slds-grid slds-gutters slds-wrap">
+        
+        <template for:each={fields}
+                  for:item="field">
+
+            <div key={field.apiName}
+                 class="slds-col slds-size_1-of-2">
+                <div class="slds-form-element">
+                    <template if:true={field.disabled}>
+                        <lightning-input disabled
+                                        name={field.apiName}
+                                         type={field.type}
+                                         label={field.label}
+                                         value={field.value}
+                                         placeholder={field.placeholder}
+                                         onchange={handleFieldChange}></lightning-input>
+                    </template>
+
+                    <template if:false={field.disabled}>
+                        <template if:false={field.readonly}>
+                        <template if:true={field.isPicklist}>
+                            <c-extenda-picklist
+                                name={field.apiName}
+                                
+                                label={field.label}
+                                placeholder={field.placeholder}
+                            
+                                object-api-name={object.apiName}
+                                field-api-name={field.apiName}
+                                record-type-id={recordTypeId}
+                            
+                                onchange={handleFieldChange}
+                            ></c-extenda-picklist>
+                        </template>
+                        <template if:false={field.isPicklist}>
+                            <lightning-input
+                                             name={field.apiName}
+                                             type={field.type}
+                                             value={field.value}
+                                             label={field.label}
+                                             placeholder={field.placeholder}
+                                             onchange={handleFieldChange}></lightning-input>
+                        </template>
+                        </template>
+                    </template>
+
+                    <template if:true={field.readonly}>
+                        <div class="slds-form-element__static slds-grow">
+                            <span class="slds-form-element__label">{field.label}</span>
+                            <div class="slds-form-element__control">
+                                <span class="slds-form-element__static">{field.value}</span>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+        </template>
+    </div>
+</template>
